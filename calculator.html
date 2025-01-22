@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #D6EAF8;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+      height: 100vh;
+    
+  }
+
+  .calculator {
+    font-family: Arial;
+    font-size: 24.8px;
+    allign: centre;
+    width: 300px;
+    margin: 100px auto;
+    background-color: #154360;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+	color: #D3D3D3;
+  }
+
+  .calculator input {
+    width: 84%;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 20px;
+	background-color: #D4E6F1 ;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+	color: black;
+  }
+
+  .calculator button {
+    width: 23%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+	margin-bottom: 10px;
+  }
+
+  .calculator button:hover {
+    background-color: grey;
+  }
+
+  .calculator button.clear {
+    background-color: #E74C3C;
+  }
+
+  .calculator button.clear:hover {
+    background-color: #BO3A2E;
+  }
+  
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  
+
+  <input type="text" id="display" name="display" placeholder="0" ><br> C A L C U L A T O R     
+  <button onclick="clearDisplay()" class="clear">C</button><br>
+  <button onclick="addToDisplay('1')">1</button>
+  <button onclick="addToDisplay('2')">2</button>
+  <button onclick="addToDisplay('3')">3</button>
+  <button onclick="addToDisplay('+')">+</button>
+  <button onclick="addToDisplay('4')">4</button> 
+  <button onclick="addToDisplay('5')">5</button>
+  <button onclick="addToDisplay('6')">6</button>
+  <button onclick="addToDisplay('-')">-</button>
+  <button onclick="addToDisplay('7')">7</button>
+  <button onclick="addToDisplay('8')">8</button>
+  <button onclick="addToDisplay('9')">9</button>
+  <button onclick="addToDisplay('*')">x</button>
+  <button onclick="addToDisplay('.')">.</button>
+  <button onclick="addToDisplay('0')">0</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="addToDisplay('/')">/</button>
+</div>
+  
+<script>
+  function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function calculate() {
+    let result = eval(document.getElementById('display').value);
+    document.getElementById('display').value = result;
+  }
+</script>
+
+</body>
+</html>
