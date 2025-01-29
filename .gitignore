@@ -1,3 +1,6 @@
 *.log
 temporary
 baseFiles
+logs
+temporary
+meta
